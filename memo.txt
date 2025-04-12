@@ -1,0 +1,35 @@
+// here is a way to save stacks through reading em and typing them again and again
+
+1.push function 
+void push(int value) {
+        if (top >= MAX - 1) {
+            cout << "Stack Overflow\n";
+            return;
+        }
+        arr[++top] = value;
+    }
+
+    2. pop function 
+        void pop() {
+        if (top < 0) {
+            cout << "Stack Underflow\n";
+            return;
+        }
+        top--;
+    }
+    3. getop function
+      int getTop() {
+        if (top < 0) {
+            cout << "Stack is empty\n";
+            return -1; // or throw an error
+        }
+        return arr[top];
+    }
+    4. isempty function
+      int getTop() {
+        if (top < 0) {
+            cout << "Stack is empty\n";
+            return -1; // or throw an error
+        }
+        return arr[top];
+    }
