@@ -1,62 +1,63 @@
-#include <iostream>
-using namespace std;
- template <class T>
-struct stnodetype {
-    itemtype datavalueinfo;
-    stnodetype<T> *next;
-
+#include<iostream>
+#include<string>
+using namespace std ;
+struct node {
+    int *info;
+    node *next;
 };
- template <class itemtype>
- class linkedunsortdeltype {
-     
-        stnodetype<itemtype> *head;
-        stnodetype<itemtype> *tail;
-private:
-int length;
-stnodetype<itemtype> *head;
-stnodetype<itemtype> *current;
-
-public :
-linkedunsortdeltype() {
-     unsortedlinklist();
-     void makeempty();
-     void resetlist();
-        bool isfull();
-        int lengthlst ()const ;
-        bool islastitem() const;
-
-
-}
-template <class itemtype>
-linkedunsortdeltype<itemtype>::linkedunsortdeltype() {
-    head = nullptr;
-    tail = nullptr;
-    length = 0;
-    current = nullptr;
-};
-template <class itemtype>
-linkedunsortdeltype<itemtype>::linkedunsortdeltype() {
+class unsortedlinkedlist {
+ int length ;
+ node *listdata;
+ node *currentpos;
+ public :
+  unsortedlinkedlist(){
+    length = 0 ;
+    listdata = NULL;
+  }
+unsortedlinkedlist(){   // destructor
     makeempty();
-    stnodetype<itemtype> *temp;
-    while (head != nullptr) {
-        temp = head;
-        head = head->next;
+}
+void makeempty(){
+    node * temp ;
+    while ( listdata != NULL ){       
+        temp = listdata;
+        listdata = listdata ->next;
         delete temp;
     }
-    length = 0;
+    length = 0 ;
 }
-template <class itemtype>
-bool linkedunsortdeltype<itemtype>::resetlist() {
-     current = head;
-        return true;
+bool isfull (){
+    node*ptr;
+    ptr = new node;
+    if (ptr == NULL){
+        return true ;
     }
-    template <class itemtype>
-bool linkedunsortdeltype<itemtype>::lengthlst() const {
-    return length;
+    else {
+        delete ptr;
+        return false ;
+    }
+
 }
+int lengthis () const {
+    return length ;
+}
+void resetlist (){
+    currentpos = NULL;
+    
+}
+void  getnextitem (int item ){
+    item = *(currentpos -> info);
+    currentpos = currentpos -> next;
 
- };
- 
- int main (){
+}
+bool islastitem (){
+    if (currentpos == NULL){
+        return true ;
+    }
+    else {
+        return false ;
+    }
+}
+};
 
- }
+int main (){}
