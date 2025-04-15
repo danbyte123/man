@@ -62,6 +62,7 @@ void insertitem (int elment ){
         while ( (location < length ) && !found  ){
             if (arr[location] == elment){
                 cout << " element already exists " << endl ;
+                return ;
                 found = true ;
             }
             else if (arr[location] > elment){

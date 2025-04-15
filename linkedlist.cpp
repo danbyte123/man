@@ -58,6 +58,19 @@ bool islastitem (){
         return false ;
     }
 }
+
+void getitem (int item ){
+    node *temp;
+    temp = listdata;
+    while (temp != NULL){
+        if (*(temp -> info) == item){
+            currentpos = temp;
+            return ;
+        }
+        temp = temp -> next;
+    }
+    currentpos = NULL;
+}
 };
 
 int main (){}

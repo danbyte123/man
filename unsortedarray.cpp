@@ -32,7 +32,7 @@ public:
         else {
             for(int i = 0; i < length; i++) {
                 if(arr[i] == elment) {
-                    // Shift elements left
+                    
                     for(int j = i; j < length-1; j++) {
                         arr[j] = arr[j+1];
                     }
