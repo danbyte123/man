@@ -71,6 +71,19 @@ void getitem (int item ){
     }
     currentpos = NULL;
 }
+void insertitem (int item ){
+    if (isfull()){
+        cout << "List is full" << endl;
+        return ;
+    }
+    node *temp;
+    temp = new node;
+    temp -> info = new int;
+    *(temp -> info) = item;
+    temp -> next = listdata;
+    listdata = temp;
+    length++;
+}
 };
 
 int main (){}
