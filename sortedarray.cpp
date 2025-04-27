@@ -67,7 +67,7 @@ void insertitem (int elment ){
             }
             else if (arr[location] > elment){
                 found = true ;
-            
+            }
             else {
                 location++;
             }
